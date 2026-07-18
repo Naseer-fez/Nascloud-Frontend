@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
 import { API_BASE_URL, ALLOW_USERS_KEY, AUTH_TOKEN_KEY, MAIN_USERNAME_KEY, MAIN_PASSWORD_KEY, MAIN_API_KEY_STORAGE, MAIN_ACCESS_CODE_KEY, SINGLE_USER_ID } from '../../config';
@@ -189,6 +189,7 @@ export default function DualLogin() {
 
   return (
     <div className={styles.container}>
+      <Link to="/home" className={styles.homeLink}>← Back to Home</Link>
       <div className={styles.singleWrapper}>
 
         {/* ACCESS DRIVE MODE (Default) */}

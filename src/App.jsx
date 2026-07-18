@@ -6,6 +6,7 @@ import ProtectedRoute from './components/common/ProtectedRoute';
 import AppLayout from './layouts/AppLayout';
 import ToastContainer from './components/common/ToastContainer';
 import DualLogin from './pages/DualLogin/DualLogin';
+import Home from './pages/Home/Home';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import ForgotCode from './pages/ForgotCode/ForgotCode';
@@ -22,6 +23,7 @@ export default function App() {
         <BrowserRouter>
           <Routes>
             {/* Public Routes */}
+            <Route path="/home" element={<Home />} />
             <Route path="/login" element={<DualLogin />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/forgot" element={<ForgotPassword />} />

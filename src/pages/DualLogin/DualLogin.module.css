@@ -294,3 +294,30 @@
     padding: 30px 20px;
   }
 }
+
+.homeLink {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.homeLink:hover {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.05);
+  transform: translateX(-2px);
+}
