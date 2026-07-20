@@ -1,37 +1,37 @@
 :root {
   /* ==========================================
-     Forest Dark Theme (Default)
+     Ocean Dark Theme (Default)
      ========================================== */
-  --bg-primary: #1F2A1D;
-  --bg-elevated: #2A3B27;
-  --bg-secondary: #354A31;
-  --bg-tertiary: #3F5A3A;
-  --bg-sidebar: #122514;
+  --bg-primary: #0a0f1d;
+  --bg-elevated: #161c2d;
+  --bg-secondary: #182034;
+  --bg-tertiary: #202a44;
+  --bg-sidebar: #121827;
 
-  --text-primary: #F5F5F7;
-  --text-secondary: #A1A6A1;
-  --text-tertiary: #6E736E;
+  --text-primary: rgba(255, 255, 255, 0.94);
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
 
-  --accent: #516964;
-  --accent-hover: #5F7B75;
-  --accent-gradient: linear-gradient(135deg, #516964 0%, #3B4E4A 100%);
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --accent-gradient: linear-gradient(135deg, #00d5ff 0%, #8b5cf6 100%);
 
   /* Semantic Colors */
-  --success: #30D158;
-  --danger: #FF453A;
-  --warning: #FFD60A;
-  --info: #64D2FF;
+  --success: #34d399;
+  --danger: #f87171;
+  --warning: #fbbf24;
+  --info: #60a5fa;
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-visible: rgba(255, 255, 255, 0.15);
-  --border-accent: rgba(81, 105, 100, 0.4);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-visible: rgba(255, 255, 255, 0.2);
+  --border-accent: rgba(56, 189, 248, 0.4);
 
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
-  --shadow-xl: 0 24px 60px rgba(0,0,0,0.6);
+  --shadow-xl: 0 24px 80px rgba(0,0,0,0.6);
 
   /* Radius */
   --radius-xs: 6px;
@@ -61,8 +61,8 @@
      ========================================== */
   --bg: var(--bg-primary);
   --bg-2: var(--bg-sidebar);
-  --panel: var(--bg-elevated);
-  --panel-strong: var(--bg-elevated);
+  --panel: rgba(22, 28, 45, 0.68);
+  --panel-strong: rgba(18, 24, 39, 0.94);
   --surface: var(--bg-secondary);
   --surface-2: var(--bg-tertiary);
   
@@ -70,7 +70,7 @@
   --muted: var(--text-secondary);
   --faint: var(--text-tertiary);
   --border: var(--border-subtle);
-  --accent-2: #7A9A93;
+  --accent-2: #a78bfa;
   --gradient: var(--accent-gradient);
   --radius: var(--radius-md);
 
@@ -95,11 +95,11 @@
   --glass-blur-heavy: 30px;
 
   --gradient-accent-1: var(--accent-gradient);
-  --gradient-accent-2: linear-gradient(135deg, #7A9A93 0%, #516964 100%);
+  --gradient-accent-2: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
   --gradient-dark: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-sidebar) 100%);
 
-  --shadow-glow-cyan: 0 0 15px rgba(81, 105, 100, 0.15);
-  --shadow-glow-purple: 0 0 15px rgba(81, 105, 100, 0.1);
+  --shadow-glow-cyan: 0 0 15px rgba(56, 189, 248, 0.15);
+  --shadow-glow-purple: 0 0 15px rgba(167, 139, 250, 0.15);
   --transition-fast: var(--duration-fast) ease;
   --transition-normal: var(--duration-normal) var(--ease-apple);
   --transition-slow: var(--duration-slow) var(--ease-apple);
@@ -113,7 +113,7 @@
 
   /* Scrollbar Settings variables for easy customisation */
   --scrollbar-width: 10px;
-  --scrollbar-thumb-bg: rgba(81, 105, 100, 0.25);
+  --scrollbar-thumb-bg: rgba(56, 189, 248, 0.25);
   --scrollbar-thumb-hover-bg: var(--accent);
   --scrollbar-logo-url: url('/nascloud.svg');
   --scrollbar-logo-size: 8px;
@@ -121,26 +121,27 @@
 }
 
 /* ==========================================
-   Sage Mist Light Theme
+   Sky Light Theme
    ========================================== */
 [data-theme="light"] {
-  --bg-primary: #F4F7F3;
-  --bg-elevated: #FFFFFF;
-  --bg-secondary: #EAF0E8;
-  --bg-tertiary: #D1DBCE;
-  --bg-sidebar: #E8EFE6;
+  --bg-primary: #f8fafc;
+  --bg-elevated: #ffffff;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+  --bg-sidebar: #ffffff;
 
-  --text-primary: #1A1A1A;
-  --text-secondary: #6B6B6B;
-  --text-tertiary: #999999;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
 
-  --accent: #516964;
-  --accent-hover: #40534F;
-  --accent-gradient: linear-gradient(135deg, #516964 0%, #3B4E4A 100%);
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+  --accent-2: #8b5cf6;
 
-  --border-subtle: rgba(0, 0, 0, 0.06);
-  --border-visible: rgba(0, 0, 0, 0.12);
-  --border-accent: rgba(81, 105, 100, 0.3);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-visible: rgba(0, 0, 0, 0.15);
+  --border-accent: rgba(14, 165, 233, 0.4);
 
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
@@ -149,9 +150,11 @@
 
   --glass-bg-hover: rgba(0, 0, 0, 0.03);
   --glass-bg-active: rgba(0, 0, 0, 0.05);
+  --panel: rgba(255, 255, 255, 0.85);
+  --panel-strong: rgba(255, 255, 255, 1);
 
-  --shadow-glow-cyan: 0 0 15px rgba(81, 105, 100, 0.1);
-  --shadow-glow-purple: 0 0 15px rgba(81, 105, 100, 0.05);
+  --shadow-glow-cyan: 0 0 15px rgba(14, 165, 233, 0.1);
+  --shadow-glow-purple: 0 0 15px rgba(99, 102, 241, 0.1);
 
   /* Scrollbar Settings variables for light theme */
   --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);
@@ -160,23 +163,24 @@
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --bg-primary: #F4F7F3;
-    --bg-elevated: #FFFFFF;
-    --bg-secondary: #EAF0E8;
-    --bg-tertiary: #D1DBCE;
-    --bg-sidebar: #E8EFE6;
+    --bg-primary: #f8fafc;
+    --bg-elevated: #ffffff;
+    --bg-secondary: #f1f5f9;
+    --bg-tertiary: #e2e8f0;
+    --bg-sidebar: #ffffff;
 
-    --text-primary: #1A1A1A;
-    --text-secondary: #6B6B6B;
-    --text-tertiary: #999999;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-tertiary: #94a3b8;
 
-    --accent: #516964;
-    --accent-hover: #40534F;
-    --accent-gradient: linear-gradient(135deg, #516964 0%, #3B4E4A 100%);
+    --accent: #0ea5e9;
+    --accent-hover: #0284c7;
+    --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+    --accent-2: #8b5cf6;
 
-    --border-subtle: rgba(0, 0, 0, 0.06);
-    --border-visible: rgba(0, 0, 0, 0.12);
-    --border-accent: rgba(81, 105, 100, 0.3);
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --border-visible: rgba(0, 0, 0, 0.15);
+    --border-accent: rgba(14, 165, 233, 0.4);
 
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
@@ -185,9 +189,11 @@
 
     --glass-bg-hover: rgba(0, 0, 0, 0.03);
     --glass-bg-active: rgba(0, 0, 0, 0.05);
+    --panel: rgba(255, 255, 255, 0.85);
+    --panel-strong: rgba(255, 255, 255, 1);
 
-    --shadow-glow-cyan: 0 0 15px rgba(81, 105, 100, 0.1);
-    --shadow-glow-purple: 0 0 15px rgba(81, 105, 100, 0.05);
+    --shadow-glow-cyan: 0 0 15px rgba(14, 165, 233, 0.1);
+    --shadow-glow-purple: 0 0 15px rgba(99, 102, 241, 0.1);
 
     /* Scrollbar Settings variables for light theme system */
     --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);

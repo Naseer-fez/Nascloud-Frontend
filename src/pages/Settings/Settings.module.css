@@ -91,13 +91,12 @@
 
 .themeBtnActive {
   border-color: var(--accent);
-  background: rgba(81, 105, 100, 0.15);
-  box-shadow: 0 0 0 2px rgba(81, 105, 100, 0.2);
+  background: rgba(56, 189, 248, 0.15);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
 }
 
 .themePreviewDark,
-.themePreviewLight,
-.themePreviewSystem {
+.themePreviewLight {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -106,16 +105,13 @@
 }
 
 .themePreviewDark {
-  background: #1F2A1D;
+  background: #0a0f1d;
 }
 
 .themePreviewLight {
-  background: #F4F7F3;
+  background: #f8fafc;
 }
 
-.themePreviewSystem {
-  background: linear-gradient(135deg, #1F2A1D 50%, #F4F7F3 50%);
-}
 
 .dangerCard {
   border-color: rgba(255, 69, 58, 0.2);

@@ -82,7 +82,7 @@ export default function Settings() {
     localStorage.setItem('theme', newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
     addToast(
-      `Theme updated to ${newTheme === 'light' ? 'Sage Mist' : 'Forest Dark'}`, 
+      `Theme updated to ${newTheme === 'light' ? 'Sky Light' : 'Ocean Dark'}`, 
       'success'
     );
   };
@@ -155,7 +155,7 @@ export default function Settings() {
               onClick={() => handleThemeChange('dark')}
             >
               <span className={styles.themePreviewDark}></span>
-              Forest Dark
+              Ocean Dark
             </button>
             
             <button
@@ -164,7 +164,7 @@ export default function Settings() {
               onClick={() => handleThemeChange('light')}
             >
               <span className={styles.themePreviewLight}></span>
-              Sage Mist (Light)
+              Sky Light
             </button>
           </div>
         </div>
