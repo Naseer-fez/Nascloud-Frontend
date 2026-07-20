@@ -12,7 +12,8 @@ export default function DualLogin() {
   const { addToast } = useToast();
   const navigate = useNavigate();
 
-  const [mode, setMode] = useState('access');
+  const [mode, setMode] = useState('access'); // 'access', 'admin', 'register'
+  const [clipState, setClipState] = useState('clippedLeft'); // 'clippedLeft', 'revealed', 'clippedRight'
 
   // Access Drive state
   const [accessCode, setAccessCode] = useState('');
@@ -32,6 +33,24 @@ export default function DualLogin() {
   const [adminPassword, setAdminPassword] = useState('');
   const [adminLoading, setAdminLoading] = useState(false);
   const [adminError, setAdminError] = useState('');
+
+  // Coordinated mode switching function
+  const changeMode = (newMode) => {
+    if (newMode === 'access') {
+      if (mode !== 'access') {
+        setClipState('clippedRight');
+        setMode('access');
+        setTimeout(() => {
+          setClipState('clippedLeft');
+        }, 350);
+      }
+    } else {
+      if (mode === 'access') {
+        setClipState('revealed');
+      }
+      setMode(newMode);
+    }
+  };
 
   // Handle Access Drive submit
   const handleAccessSubmit = async (e) => {
@@ -88,7 +107,6 @@ export default function DualLogin() {
 
       if (allowUsers) {
         // Multi-user mode: redirect to client registration
-        // Store token temporarily for the client-register page
         localStorage.setItem(AUTH_TOKEN_KEY, token);
         navigate('/client-register');
       } else {
@@ -191,25 +209,24 @@ export default function DualLogin() {
     <div className={styles.container}>
       <Link to="/home" className={styles.homeLink}>← Back to Home</Link>
       
-      {/* Top Toggle Switch */}
-      <div className={styles.switchBox}>
+      {/* Shared Toggle Switch */}
+      <div className={styles.switchBox} data-theme={mode !== 'access' ? 'light' : 'dark'}>
         <label className={styles.switch}>
           <input
             type="checkbox"
             className={styles.toggle}
             checked={mode === 'admin' || mode === 'register'}
-            onChange={(e) => setMode(e.target.checked ? 'admin' : 'access')}
+            onChange={(e) => changeMode(e.target.checked ? 'admin' : 'access')}
           />
           <span className={styles.slider}></span>
           <span className={styles.cardSide}></span>
         </label>
       </div>
 
-      <div className={styles.singleWrapper}>
-        <div className={`${styles.flipCardInner} ${mode === 'admin' || mode === 'register' ? styles.flipped : ''}`}>
-          
-          {/* FRONT SIDE (User / Access Drive) */}
-          <div className={styles.flipCardFront}>
+      {/* LAYER 1: User / Access Drive (Dark Theme) */}
+      <div className={styles.userLayer}>
+        <div className={styles.singleWrapper}>
+          <div className={styles.cardContent}>
             <div className={styles.formContent}>
               <div className={styles.brandHeader}>
                 <img src="/nascloud.svg" alt="NasCloud Logo" className={styles.logoImg} />
@@ -229,7 +246,7 @@ export default function DualLogin() {
                       placeholder="Enter your server access code"
                       value={accessCode}
                       onChange={(e) => setAccessCode(e.target.value)}
-                      disabled={accessLoading}
+                      disabled={accessLoading || mode !== 'access'}
                     />
                   </div>
 
@@ -241,18 +258,18 @@ export default function DualLogin() {
                       placeholder="••••••••"
                       value={accessPassword}
                       onChange={(e) => setAccessPassword(e.target.value)}
-                      disabled={accessLoading}
+                      disabled={accessLoading || mode !== 'access'}
                     />
                   </div>
 
                   {accessError && <p className={styles.errorMessage}>{accessError}</p>}
 
-                  <button type="submit" className={styles.primaryBtn} disabled={accessLoading}>
+                  <button type="submit" className={styles.primaryBtn} disabled={accessLoading || mode !== 'access'}>
                     {accessLoading ? 'Connecting...' : 'Access Drive'}
                   </button>
 
                   <div className={styles.toggleText}>
-                    <button type="button" onClick={() => navigate('/forgot-code')} className={styles.inlineBtn}>
+                    <button type="button" onClick={() => navigate('/forgot-code')} className={styles.inlineBtn} disabled={mode !== 'access'}>
                       Forgot your code?
                     </button>
                   </div>
@@ -260,15 +277,26 @@ export default function DualLogin() {
               </div>
 
               <div className={styles.switchModeBox}>
-                <button type="button" onClick={() => setMode('admin')} className={styles.glowBtn}>
+                <button type="button" onClick={() => changeMode('admin')} className={styles.glowBtn} disabled={mode !== 'access'}>
                   Admin Login
                 </button>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* BACK SIDE (Admin Login or Admin Register) */}
-          <div className={styles.flipCardBack}>
+      {/* LAYER 2: Admin Login / Register (Light Theme, Wiped) */}
+      <div 
+        className={`${styles.adminLayer} ${
+          clipState === 'revealed' ? styles.wipedActive : 
+          clipState === 'clippedRight' ? styles.wipedRight : 
+          styles.wipedLeft
+        }`}
+        data-theme="light"
+      >
+        <div className={styles.singleWrapper}>
+          <div className={styles.cardContent}>
             {mode === 'register' ? (
               <div className={styles.formContent}>
                 <div className={styles.brandHeader}>
@@ -289,7 +317,7 @@ export default function DualLogin() {
                         placeholder="Admin username"
                         value={regUsername}
                         onChange={(e) => setRegUsername(e.target.value)}
-                        disabled={regLoading}
+                        disabled={regLoading || mode === 'access'}
                       />
                     </div>
 
@@ -301,7 +329,7 @@ export default function DualLogin() {
                         placeholder="name@domain.com"
                         value={regEmail}
                         onChange={(e) => setRegEmail(e.target.value)}
-                        disabled={regLoading}
+                        disabled={regLoading || mode === 'access'}
                       />
                     </div>
 
@@ -313,18 +341,18 @@ export default function DualLogin() {
                         placeholder="••••••••"
                         value={regPassword}
                         onChange={(e) => setRegPassword(e.target.value)}
-                        disabled={regLoading}
+                        disabled={regLoading || mode === 'access'}
                       />
                     </div>
 
                     {regError && <p className={styles.errorMessage}>{regError}</p>}
 
-                    <button type="submit" className={styles.primaryBtn} disabled={regLoading}>
+                    <button type="submit" className={styles.primaryBtn} disabled={regLoading || mode === 'access'}>
                       {regLoading ? 'Registering...' : 'Create Account'}
                     </button>
 
                     <div className={styles.toggleText}>
-                      <span>Already have an account? <button type="button" onClick={() => setMode('admin')} className={styles.inlineBtn}>Sign In</button></span>
+                      <span>Already have an account? <button type="button" onClick={() => changeMode('admin')} className={styles.inlineBtn} disabled={mode === 'access'}>Sign In</button></span>
                     </div>
                   </form>
                 </div>
@@ -349,7 +377,7 @@ export default function DualLogin() {
                         placeholder="Admin username"
                         value={adminUsername}
                         onChange={(e) => setAdminUsername(e.target.value)}
-                        disabled={adminLoading}
+                        disabled={adminLoading || mode === 'access'}
                       />
                     </div>
 
@@ -361,31 +389,30 @@ export default function DualLogin() {
                         placeholder="••••••••"
                         value={adminPassword}
                         onChange={(e) => setAdminPassword(e.target.value)}
-                        disabled={adminLoading}
+                        disabled={adminLoading || mode === 'access'}
                       />
                     </div>
 
                     {adminError && <p className={styles.errorMessage}>{adminError}</p>}
 
-                    <button type="submit" className={styles.primaryBtn} disabled={adminLoading}>
+                    <button type="submit" className={styles.primaryBtn} disabled={adminLoading || mode === 'access'}>
                       {adminLoading ? 'Logging in...' : 'Login to Dashboard'}
                     </button>
 
                     <div className={styles.toggleText}>
-                      <span>New to PersonalDrive? <button type="button" onClick={() => setMode('register')} className={styles.inlineBtn}>Register</button></span>
+                      <span>New to PersonalDrive? <button type="button" onClick={() => changeMode('register')} className={styles.inlineBtn} disabled={mode === 'access'}>Register</button></span>
                     </div>
                   </form>
                 </div>
 
                 <div className={styles.switchModeBox}>
-                  <button type="button" onClick={() => setMode('access')} className={styles.secondaryBtn}>
+                  <button type="button" onClick={() => changeMode('access')} className={styles.secondaryBtn} disabled={mode === 'access'}>
                     Are you a User?
                   </button>
                 </div>
               </div>
             )}
           </div>
-
         </div>
       </div>
     </div>
