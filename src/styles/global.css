@@ -124,15 +124,32 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Scrollbars override */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-visible);
+  background-color: var(--border-visible);
+  background-image: url('/nascloud.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 6px;
   border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background-color var(--duration-fast);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: url('/nascloud.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 6px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }

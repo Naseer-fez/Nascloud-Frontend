@@ -19,7 +19,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  border-radius: var(--radius-md);
+  border-radius: 14px; /* Soft Apple curves */
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   transition: all var(--duration-fast) var(--ease-apple);
@@ -45,7 +45,6 @@
   width: 240px;
   height: 40px;
   z-index: 10;
-  transition: color var(--duration-normal) var(--ease-apple);
 }
 
 .switch {
@@ -62,14 +61,14 @@
   height: 0;
 }
 
-/* Slider Track */
+/* Slider Track - Rounded Pill */
 .slider {
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-full);
+  border-radius: 9999px; /* Pill shape */
   transition: background-color 220ms cubic-bezier(0.4, 0, 0.2, 1),
               border-color 220ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -83,31 +82,31 @@
   left: 4px;
   bottom: 3px;
   background-color: var(--text-primary);
-  border-radius: var(--radius-circle);
+  border-radius: 50%; /* Perfect circle */
   box-shadow: var(--shadow-sm);
   transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
               background-color 220ms cubic-bezier(0.4, 0, 0.2, 1),
               width 180ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Scale thumb slightly on active press */
+/* Scale/stretch thumb slightly on active press */
 .switch:active .slider:before {
-  width: 24px; /* stretch slightly like iOS toggle */
+  width: 24px;
 }
 
-/* Toggle interactions */
+/* Toggle active interactions */
 .toggle:checked + .slider {
-  background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--accent); /* Changes to accent green */
+  border-color: var(--border-accent);
 }
 
 .toggle:checked + .slider:before {
   transform: translateX(30px);
-  background-color: #1a1a1a;
+  background-color: var(--bg-primary); /* Swings to dark */
 }
 
 .switch:active .toggle:checked + .slider:before {
-  transform: translateX(26px); /* compensate for wider thumb on stretch */
+  transform: translateX(26px);
 }
 
 .cardSide {
@@ -146,7 +145,7 @@
 }
 
 /* ----------------------------------------------------
-   Coordinated Theme Reveal Layers
+   Coordinated Theme Reveal Layers (Same theme, content shifts)
    ---------------------------------------------------- */
 
 .userLayer {
@@ -167,26 +166,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--bg-primary); /* inherits light theme variables due to data-theme */
+  background: var(--bg-primary);
   z-index: 2;
   pointer-events: none;
 }
 
 /* Left -> Right wipe clip-path states */
 .wipedLeft {
-  clip-path: inset(0 100% 0 0); /* clipped out to left, invisible */
+  clip-path: inset(0 100% 0 0); /* clipped to left */
   transition: none;
 }
 
 .wipedActive {
-  clip-path: inset(0 0 0 0); /* fully visible */
+  clip-path: inset(0 0 0 0); /* fully revealed */
   transition: clip-path 220ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 80ms; /* wait 80ms for thumb start */
+  transition-delay: 80ms; /* wait 80ms for thumb slide to start */
   pointer-events: auto;
 }
 
 .wipedRight {
-  clip-path: inset(0 0 0 100%); /* clipped out to right, invisible */
+  clip-path: inset(0 0 0 100%); /* clipped to right */
   transition: clip-path 220ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 80ms;
 }
@@ -198,7 +197,7 @@
   width: 90%;
   max-width: 440px;
   height: 560px;
-  border-radius: var(--radius-xl);
+  border-radius: 28px; /* Increased curves */
   box-sizing: border-box;
   padding: 0;
 }
@@ -212,7 +211,7 @@
   box-sizing: border-box;
   background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
+  border-radius: 28px; /* Soft Apple curves */
   box-shadow: var(--shadow-xl);
 }
 
@@ -287,7 +286,7 @@
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   padding: 10px 14px;
-  border-radius: var(--radius-md);
+  border-radius: 14px; /* Curved inputs */
   color: var(--text-primary);
   font-size: 14px;
   outline: none;
@@ -318,7 +317,7 @@
 .primaryBtn {
   width: 100%;
   padding: 12px 20px;
-  border-radius: var(--radius-md);
+  border-radius: 14px; /* Soft Apple curves */
   font-size: 14px;
   font-weight: 600;
   border: none;
@@ -349,7 +348,7 @@
   color: var(--accent);
   border: 1px solid var(--border-accent);
   padding: 10px 20px;
-  border-radius: var(--radius-md);
+  border-radius: 14px; /* Curved button */
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -370,7 +369,7 @@
   color: var(--text-secondary);
   border: 1px solid var(--border-subtle);
   padding: 10px 20px;
-  border-radius: var(--radius-md);
+  border-radius: 14px; /* Curved button */
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;

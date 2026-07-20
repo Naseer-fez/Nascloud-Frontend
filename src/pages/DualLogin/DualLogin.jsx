@@ -210,7 +210,7 @@ export default function DualLogin() {
       <Link to="/home" className={styles.homeLink}>← Back to Home</Link>
       
       {/* Shared Toggle Switch */}
-      <div className={styles.switchBox} data-theme={mode !== 'access' ? 'light' : 'dark'}>
+      <div className={styles.switchBox}>
         <label className={styles.switch}>
           <input
             type="checkbox"
@@ -223,7 +223,7 @@ export default function DualLogin() {
         </label>
       </div>
 
-      {/* LAYER 1: User / Access Drive (Dark Theme) */}
+      {/* LAYER 1: User / Access Drive (Dark Forest Theme) */}
       <div className={styles.userLayer}>
         <div className={styles.singleWrapper}>
           <div className={styles.cardContent}>
@@ -286,14 +286,13 @@ export default function DualLogin() {
         </div>
       </div>
 
-      {/* LAYER 2: Admin Login / Register (Light Theme, Wiped) */}
+      {/* LAYER 2: Admin Login / Register (Dark Forest Theme, Wiped) */}
       <div 
         className={`${styles.adminLayer} ${
           clipState === 'revealed' ? styles.wipedActive : 
           clipState === 'clippedRight' ? styles.wipedRight : 
           styles.wipedLeft
         }`}
-        data-theme="light"
       >
         <div className={styles.singleWrapper}>
           <div className={styles.cardContent}>
