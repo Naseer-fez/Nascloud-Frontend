@@ -96,6 +96,8 @@ export function AuthProvider({ children }) {
   }, [state.isAuthenticated, state.token]);
 
   const login = (token, userid) => {
+    localStorage.setItem(AUTH_TOKEN_KEY, token);
+    localStorage.setItem(AUTH_USER_ID_KEY, String(userid));
     dispatch({ type: 'LOGIN', payload: { token, userid } });
   };
 
