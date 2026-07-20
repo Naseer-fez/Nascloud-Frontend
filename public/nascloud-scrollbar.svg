@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- N Chevron - Muted Green -->
+  <polyline points="90,380 185,160 280,380 320,130"
+            fill="none"
+            stroke="#8AB83E"
+            stroke-width="44"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+            
+  <!-- C Arc - Muted Theme Silver -->
+  <path d="M 389,172 A 120,120 0 1,0 389,368"
+        fill="none"
+        stroke="#A09880"
+        stroke-width="44"
+        stroke-linecap="round"/>
+</svg>

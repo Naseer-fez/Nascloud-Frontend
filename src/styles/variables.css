@@ -1,37 +1,39 @@
 :root {
   /* ==========================================
-     Cosmic Blue Theme (Default)
+     Forest Dawn Theme (Default)
+     "The Crack" — 5:35 AM, dawn light breaking
+     through an ancient forest canopy
      ========================================== */
-  --bg-primary: #0a0f1d;
-  --bg-elevated: rgba(22, 28, 45, 0.68);
-  --bg-secondary: #182034;
-  --bg-tertiary: #202a44;
-  --bg-sidebar: #121827;
+  --bg-primary: #0a0e08;
+  --bg-elevated: rgba(12, 20, 16, 0.68);
+  --bg-secondary: #101a14;
+  --bg-tertiary: #162018;
+  --bg-sidebar: #0a100c;
 
-  --text-primary: rgba(255, 255, 255, 0.94);
-  --text-secondary: #94a3b8;
-  --text-tertiary: #64748b;
+  --text-primary: rgba(232, 220, 200, 0.92);
+  --text-secondary: #a09880;
+  --text-tertiary: #6a6050;
 
-  --accent: #38bdf8;
-  --accent-hover: #7dd3fc;
-  --accent-gradient: linear-gradient(135deg, #00d5ff 0%, #8b5cf6 100%);
+  --accent: #c46488;
+  --accent-hover: #d4849c;
+  --accent-gradient: linear-gradient(135deg, #b0a898 0%, #c46488 100%);
 
   /* Semantic Colors */
-  --success: #34d399;
-  --danger: #f87171;
-  --warning: #fbbf24;
-  --info: #60a5fa;
+  --success: #5a9a68;
+  --danger: #c45a5a;
+  --warning: #c4a040;
+  --info: #6a90b0;
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.1);
-  --border-visible: rgba(255, 255, 255, 0.2);
-  --border-accent: rgba(56, 189, 248, 0.4);
+  --border-subtle: rgba(232, 220, 200, 0.08);
+  --border-visible: rgba(232, 220, 200, 0.15);
+  --border-accent: rgba(196, 100, 136, 0.35);
 
   /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-  --shadow-md: 0 8px 16px rgba(0,0,0,0.2);
-  --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.36);
-  --shadow-xl: 0 32px 100px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 32px 100px rgba(0, 0, 0, 0.55);
 
   /* Radius */
   --radius-xs: 4px;
@@ -40,6 +42,7 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-circle: 50%;
+  --radius-full: 9999px;
 
   /* Transitions */
   --ease-apple: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -62,7 +65,7 @@
   --bg: var(--bg-primary);
   --bg-2: var(--bg-sidebar);
   --panel: var(--bg-elevated);
-  --panel-strong: rgba(18, 24, 39, 0.94);
+  --panel-strong: rgba(10, 16, 12, 0.94);
   --surface: var(--bg-secondary);
   --surface-2: var(--bg-tertiary);
   
@@ -70,7 +73,7 @@
   --muted: var(--text-secondary);
   --faint: var(--text-tertiary);
   --border: var(--border-subtle);
-  --accent-2: #a78bfa;
+  --accent-2: #b0a898;
   --gradient: var(--accent-gradient);
   --radius: var(--radius-md);
 
@@ -87,19 +90,19 @@
   --color-info: var(--info);
 
   --glass-bg: var(--bg-elevated);
-  --glass-bg-hover: rgba(255, 255, 255, 0.05);
-  --glass-bg-active: rgba(255, 255, 255, 0.08);
+  --glass-bg-hover: rgba(232, 220, 200, 0.04);
+  --glass-bg-active: rgba(232, 220, 200, 0.06);
   --glass-border: var(--border-subtle);
   --glass-border-active: var(--border-accent);
   --glass-blur: 20px;
   --glass-blur-heavy: 30px;
 
   --gradient-accent-1: var(--accent-gradient);
-  --gradient-accent-2: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%);
-  --gradient-dark: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-sidebar) 100%);
+  --gradient-accent-2: linear-gradient(135deg, #b0a898 0%, #d4849c 100%);
+  --gradient-dark: linear-gradient(180deg, #0a0e08 0%, #0a100c 100%);
 
-  --shadow-glow-cyan: 0 0 15px rgba(56, 189, 248, 0.15);
-  --shadow-glow-purple: 0 0 15px rgba(167, 139, 250, 0.1);
+  --shadow-glow-cyan: 0 0 15px rgba(140, 160, 80, 0.12);
+  --shadow-glow-purple: 0 0 15px rgba(196, 100, 136, 0.08);
   --transition-fast: var(--duration-fast) ease;
   --transition-normal: var(--duration-normal) var(--ease-apple);
   --transition-slow: var(--duration-slow) var(--ease-apple);
@@ -112,85 +115,90 @@
   --font: var(--font-body);
 
   /* Scrollbar Settings variables for easy customisation */
-  --scrollbar-width: 10px;
-  --scrollbar-thumb-bg: rgba(56, 189, 248, 0.25);
-  --scrollbar-thumb-hover-bg: var(--accent);
-  --scrollbar-logo-url: url('/nascloud.svg');
-  --scrollbar-logo-size: 8px;
+  --scrollbar-width: 15px;
+  --scrollbar-thumb-bg: rgba(196, 100, 136, 0.20);
+  --scrollbar-thumb-hover-bg: rgba(196, 100, 136, 0.45);
   --scrollbar-border-size: 2px;
+  --scrollbar-logo-url: url('/nascloud-scrollbar.svg');
+  --scrollbar-logo-active-url: url('/nascloud-scrollbar-active.svg');
+  --scrollbar-logo-size: 11px;
 }
 
 /* ==========================================
-   Ocean Blue Light Theme
+   Misty Dawn Light Theme
    ========================================== */
 [data-theme="light"] {
-  --bg-primary: #F0F4F8;
-  --bg-elevated: #FFFFFF;
-  --bg-secondary: #E1E8F0;
-  --bg-tertiary: #C8D4E3;
-  --bg-sidebar: #EAF0F6;
+  --bg-primary: #eef2ee;
+  --bg-elevated: #f6faf6;
+  --bg-secondary: #dce4dc;
+  --bg-tertiary: #c8d4c8;
+  --bg-sidebar: #e4ece4;
 
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-tertiary: #94A3B8;
+  --text-primary: #1a2018;
+  --text-secondary: #4a5648;
+  --text-tertiary: #7a8a78;
 
-  --accent: #0ea5e9;
-  --accent-hover: #0284c7;
-  --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+  --accent: #a04870;
+  --accent-hover: #8a3860;
+  --accent-gradient: linear-gradient(135deg, #8a8070 0%, #a04870 100%);
 
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-visible: rgba(0, 0, 0, 0.15);
-  --border-accent: rgba(14, 165, 233, 0.4);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-visible: rgba(0, 0, 0, 0.12);
+  --border-accent: rgba(160, 72, 112, 0.35);
 
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-  --shadow-xl: 0 24px 60px rgba(0,0,0,0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.10);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.12);
 
-  --glass-bg-hover: rgba(0, 0, 0, 0.03);
-  --glass-bg-active: rgba(0, 0, 0, 0.05);
+  --glass-bg-hover: rgba(0, 0, 0, 0.02);
+  --glass-bg-active: rgba(0, 0, 0, 0.04);
 
-  --shadow-glow-cyan: 0 0 15px rgba(14, 165, 233, 0.15);
-  --shadow-glow-purple: 0 0 15px rgba(99, 102, 241, 0.1);
+  --shadow-glow-cyan: 0 0 15px rgba(100, 120, 60, 0.10);
+  --shadow-glow-purple: 0 0 15px rgba(160, 72, 112, 0.08);
 
   /* Scrollbar Settings variables for light theme */
-  --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);
-  --scrollbar-thumb-hover-bg: var(--accent);
+  --scrollbar-thumb-bg: rgba(0, 0, 0, 0.12);
+  --scrollbar-thumb-hover-bg: rgba(160, 72, 112, 0.45);
+  --scrollbar-logo-url: url('/nascloud-scrollbar.svg');
+  --scrollbar-logo-active-url: url('/nascloud-scrollbar-active.svg');
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --bg-primary: #F0F4F8;
-    --bg-elevated: #FFFFFF;
-    --bg-secondary: #E1E8F0;
-    --bg-tertiary: #C8D4E3;
-    --bg-sidebar: #EAF0F6;
+    --bg-primary: #eef2ee;
+    --bg-elevated: #f6faf6;
+    --bg-secondary: #dce4dc;
+    --bg-tertiary: #c8d4c8;
+    --bg-sidebar: #e4ece4;
 
-    --text-primary: #0F172A;
-    --text-secondary: #475569;
-    --text-tertiary: #94A3B8;
+    --text-primary: #1a2018;
+    --text-secondary: #4a5648;
+    --text-tertiary: #7a8a78;
 
-    --accent: #0ea5e9;
-    --accent-hover: #0284c7;
-    --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+    --accent: #a04870;
+    --accent-hover: #8a3860;
+    --accent-gradient: linear-gradient(135deg, #8a8070 0%, #a04870 100%);
 
-    --border-subtle: rgba(0, 0, 0, 0.08);
-    --border-visible: rgba(0, 0, 0, 0.15);
-    --border-accent: rgba(14, 165, 233, 0.4);
+    --border-subtle: rgba(0, 0, 0, 0.06);
+    --border-visible: rgba(0, 0, 0, 0.12);
+    --border-accent: rgba(160, 72, 112, 0.35);
 
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-    --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-    --shadow-xl: 0 24px 60px rgba(0,0,0,0.15);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.10);
+    --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.12);
 
-    --glass-bg-hover: rgba(0, 0, 0, 0.03);
-    --glass-bg-active: rgba(0, 0, 0, 0.05);
+    --glass-bg-hover: rgba(0, 0, 0, 0.02);
+    --glass-bg-active: rgba(0, 0, 0, 0.04);
 
-    --shadow-glow-cyan: 0 0 15px rgba(14, 165, 233, 0.15);
-    --shadow-glow-purple: 0 0 15px rgba(99, 102, 241, 0.1);
+    --shadow-glow-cyan: 0 0 15px rgba(100, 120, 60, 0.10);
+    --shadow-glow-purple: 0 0 15px rgba(160, 72, 112, 0.08);
 
     /* Scrollbar Settings variables for light theme system */
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.15);
-    --scrollbar-thumb-hover-bg: var(--accent);
+    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.12);
+    --scrollbar-thumb-hover-bg: rgba(160, 72, 112, 0.45);
+    --scrollbar-logo-url: url('/nascloud-scrollbar.svg');
+    --scrollbar-logo-active-url: url('/nascloud-scrollbar-active.svg');
   }
 }

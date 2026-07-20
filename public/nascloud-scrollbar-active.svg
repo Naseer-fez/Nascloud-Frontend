@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Vibrant green glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- N Chevron - Bright Lime Green -->
+  <polyline points="90,380 185,160 280,380 320,130"
+            fill="none"
+            stroke="#A8D84E"
+            stroke-width="44"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            filter="url(#glow)"/>
+            
+  <!-- C Arc - Bright White -->
+  <path d="M 389,172 A 120,120 0 1,0 389,368"
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="44"
+        stroke-linecap="round"/>
+</svg>

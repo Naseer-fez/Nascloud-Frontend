@@ -236,7 +236,7 @@ export default function Home() {
               <Laptop size={18} className={styles.previewIcon} />
               <h4>Step-by-Step Desktop Installer</h4>
             </div>
-            <p>The GUI Setup Wizard configures Ngrok, validates dependencies, and initializes the configuration without manual file editing.</p>
+            <p>The GUI Setup Wizard  validates dependencies, and initializes the configuration without manual file editing.</p>
           </div>
 
           <div className={styles.previewItem}>

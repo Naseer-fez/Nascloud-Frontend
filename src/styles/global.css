@@ -136,20 +136,20 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--scrollbar-thumb-bg);
   background-image: var(--scrollbar-logo-url);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: var(--scrollbar-logo-size);
+  background-position: 50% calc(100% - 5px);
+  background-size: var(--scrollbar-logo-size) var(--scrollbar-logo-size);
   border-radius: var(--radius-full);
   border: var(--scrollbar-border-size) solid transparent;
   background-clip: padding-box;
-  transition: background-color var(--duration-fast);
+  transition: background-color var(--duration-fast) var(--ease-apple), background-image var(--duration-fast) var(--ease-apple);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--scrollbar-thumb-hover-bg);
-  background-image: var(--scrollbar-logo-url);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: var(--scrollbar-logo-size);
-  border: var(--scrollbar-border-size) solid transparent;
-  background-clip: padding-box;
+  background-image: var(--scrollbar-logo-active-url);
+}
+
+body.is-scrolling ::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-hover-bg);
+  background-image: var(--scrollbar-logo-active-url);
 }
