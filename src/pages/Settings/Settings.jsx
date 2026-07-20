@@ -82,7 +82,7 @@ export default function Settings() {
     localStorage.setItem('theme', newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
     addToast(
-      `Theme updated to ${newTheme === 'light' ? 'Sky Light' : 'Ocean Dark'}`, 
+      `Theme updated to ${newTheme === 'light' ? 'Ocean Blue (Light)' : 'Cosmic Blue (Dark)'}`, 
       'success'
     );
   };
@@ -155,7 +155,7 @@ export default function Settings() {
               onClick={() => handleThemeChange('dark')}
             >
               <span className={styles.themePreviewDark}></span>
-              Ocean Dark
+              Cosmic Blue (Dark)
             </button>
             
             <button
@@ -164,7 +164,7 @@ export default function Settings() {
               onClick={() => handleThemeChange('light')}
             >
               <span className={styles.themePreviewLight}></span>
-              Sky Light
+              Ocean Blue (Light)
             </button>
           </div>
         </div>

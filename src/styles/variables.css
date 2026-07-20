@@ -1,9 +1,9 @@
 :root {
   /* ==========================================
-     Ocean Dark Theme (Default)
+     Cosmic Blue Theme (Default)
      ========================================== */
   --bg-primary: #0a0f1d;
-  --bg-elevated: #161c2d;
+  --bg-elevated: rgba(22, 28, 45, 0.68);
   --bg-secondary: #182034;
   --bg-tertiary: #202a44;
   --bg-sidebar: #121827;
@@ -13,7 +13,7 @@
   --text-tertiary: #64748b;
 
   --accent: #38bdf8;
-  --accent-hover: #0ea5e9;
+  --accent-hover: #7dd3fc;
   --accent-gradient: linear-gradient(135deg, #00d5ff 0%, #8b5cf6 100%);
 
   /* Semantic Colors */
@@ -28,17 +28,17 @@
   --border-accent: rgba(56, 189, 248, 0.4);
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
-  --shadow-xl: 0 24px 80px rgba(0,0,0,0.6);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.2);
+  --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.36);
+  --shadow-xl: 0 32px 100px rgba(0, 0, 0, 0.5);
 
   /* Radius */
-  --radius-xs: 6px;
-  --radius-sm: 8px;
-  --radius-md: 10px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
   --radius-lg: 12px;
-  --radius-xl: 20px;
+  --radius-xl: 16px;
   --radius-circle: 50%;
 
   /* Transitions */
@@ -61,7 +61,7 @@
      ========================================== */
   --bg: var(--bg-primary);
   --bg-2: var(--bg-sidebar);
-  --panel: rgba(22, 28, 45, 0.68);
+  --panel: var(--bg-elevated);
   --panel-strong: rgba(18, 24, 39, 0.94);
   --surface: var(--bg-secondary);
   --surface-2: var(--bg-tertiary);
@@ -95,11 +95,11 @@
   --glass-blur-heavy: 30px;
 
   --gradient-accent-1: var(--accent-gradient);
-  --gradient-accent-2: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+  --gradient-accent-2: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%);
   --gradient-dark: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-sidebar) 100%);
 
   --shadow-glow-cyan: 0 0 15px rgba(56, 189, 248, 0.15);
-  --shadow-glow-purple: 0 0 15px rgba(167, 139, 250, 0.15);
+  --shadow-glow-purple: 0 0 15px rgba(167, 139, 250, 0.1);
   --transition-fast: var(--duration-fast) ease;
   --transition-normal: var(--duration-normal) var(--ease-apple);
   --transition-slow: var(--duration-slow) var(--ease-apple);
@@ -121,23 +121,22 @@
 }
 
 /* ==========================================
-   Sky Light Theme
+   Ocean Blue Light Theme
    ========================================== */
 [data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-elevated: #ffffff;
-  --bg-secondary: #f1f5f9;
-  --bg-tertiary: #e2e8f0;
-  --bg-sidebar: #ffffff;
+  --bg-primary: #F0F4F8;
+  --bg-elevated: #FFFFFF;
+  --bg-secondary: #E1E8F0;
+  --bg-tertiary: #C8D4E3;
+  --bg-sidebar: #EAF0F6;
 
-  --text-primary: #0f172a;
+  --text-primary: #0F172A;
   --text-secondary: #475569;
-  --text-tertiary: #94a3b8;
+  --text-tertiary: #94A3B8;
 
   --accent: #0ea5e9;
   --accent-hover: #0284c7;
   --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
-  --accent-2: #8b5cf6;
 
   --border-subtle: rgba(0, 0, 0, 0.08);
   --border-visible: rgba(0, 0, 0, 0.15);
@@ -150,10 +149,8 @@
 
   --glass-bg-hover: rgba(0, 0, 0, 0.03);
   --glass-bg-active: rgba(0, 0, 0, 0.05);
-  --panel: rgba(255, 255, 255, 0.85);
-  --panel-strong: rgba(255, 255, 255, 1);
 
-  --shadow-glow-cyan: 0 0 15px rgba(14, 165, 233, 0.1);
+  --shadow-glow-cyan: 0 0 15px rgba(14, 165, 233, 0.15);
   --shadow-glow-purple: 0 0 15px rgba(99, 102, 241, 0.1);
 
   /* Scrollbar Settings variables for light theme */
@@ -163,20 +160,19 @@
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --bg-primary: #f8fafc;
-    --bg-elevated: #ffffff;
-    --bg-secondary: #f1f5f9;
-    --bg-tertiary: #e2e8f0;
-    --bg-sidebar: #ffffff;
+    --bg-primary: #F0F4F8;
+    --bg-elevated: #FFFFFF;
+    --bg-secondary: #E1E8F0;
+    --bg-tertiary: #C8D4E3;
+    --bg-sidebar: #EAF0F6;
 
-    --text-primary: #0f172a;
+    --text-primary: #0F172A;
     --text-secondary: #475569;
-    --text-tertiary: #94a3b8;
+    --text-tertiary: #94A3B8;
 
     --accent: #0ea5e9;
     --accent-hover: #0284c7;
     --accent-gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
-    --accent-2: #8b5cf6;
 
     --border-subtle: rgba(0, 0, 0, 0.08);
     --border-visible: rgba(0, 0, 0, 0.15);
@@ -189,10 +185,8 @@
 
     --glass-bg-hover: rgba(0, 0, 0, 0.03);
     --glass-bg-active: rgba(0, 0, 0, 0.05);
-    --panel: rgba(255, 255, 255, 0.85);
-    --panel-strong: rgba(255, 255, 255, 1);
 
-    --shadow-glow-cyan: 0 0 15px rgba(14, 165, 233, 0.1);
+    --shadow-glow-cyan: 0 0 15px rgba(14, 165, 233, 0.15);
     --shadow-glow-purple: 0 0 15px rgba(99, 102, 241, 0.1);
 
     /* Scrollbar Settings variables for light theme system */

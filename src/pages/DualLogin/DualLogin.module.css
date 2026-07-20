@@ -19,7 +19,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  border-radius: 14px; /* Soft Apple curves */
+  border-radius: var(--radius-md);
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   transition: all var(--duration-fast) var(--ease-apple);
@@ -197,7 +197,7 @@
   width: 90%;
   max-width: 440px;
   height: 560px;
-  border-radius: 28px; /* Increased curves */
+  border-radius: var(--radius-lg);
   box-sizing: border-box;
   padding: 0;
 }
@@ -211,7 +211,7 @@
   box-sizing: border-box;
   background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
-  border-radius: 28px; /* Soft Apple curves */
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
 }
 
@@ -286,7 +286,7 @@
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   padding: 10px 14px;
-  border-radius: 14px; /* Curved inputs */
+  border-radius: var(--radius-md);
   color: var(--text-primary);
   font-size: 14px;
   outline: none;
@@ -317,7 +317,7 @@
 .primaryBtn {
   width: 100%;
   padding: 12px 20px;
-  border-radius: 14px; /* Soft Apple curves */
+  border-radius: var(--radius-md);
   font-size: 14px;
   font-weight: 600;
   border: none;
@@ -348,7 +348,7 @@
   color: var(--accent);
   border: 1px solid var(--border-accent);
   padding: 10px 20px;
-  border-radius: 14px; /* Curved button */
+  border-radius: var(--radius-md);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -369,7 +369,7 @@
   color: var(--text-secondary);
   border: 1px solid var(--border-subtle);
   padding: 10px 20px;
-  border-radius: 14px; /* Curved button */
+  border-radius: var(--radius-md);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
