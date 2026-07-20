@@ -14,6 +14,7 @@ import { getStructure, getUserStats } from '../../api/endpoints';
 import { SIDEBAR_REFRESH_EVENT } from '../../config';
 import { useAuth } from '../../context/AuthContext';
 import { formatBytes, isFolder, itemPath, normalizePath } from '../../utils/files';
+import NasCloudLogo from '../common/NasCloudLogo';
 import styles from './Sidebar.module.css';
 
 export default function Sidebar({ collapsed, onToggle }) {
@@ -134,7 +135,7 @@ export default function Sidebar({ collapsed, onToggle }) {
     <aside className={`${styles.sidebar} ${collapsed ? styles.collapsed : ''}`}>
       <div className={styles.brand}>
         <button className={styles.logo} onClick={() => navigate('/')} title="PersonalDrive">
-          <img src="/nascloud.svg" alt="NasCloud Logo" style={{ width: '24px', height: '24px', objectFit: 'contain' }} aria-hidden="true" />
+          <NasCloudLogo size={24} className={styles.logoIcon} />
           {!collapsed && <span className={styles.logoText}>PersonalDrive</span>}
         </button>
         <button className={styles.toggleBtn} onClick={onToggle} title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}>

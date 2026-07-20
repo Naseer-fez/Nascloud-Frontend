@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useToast } from '../../context/ToastContext';
 import { accessSharedFile } from '../../api/endpoints';
 import styles from './ShareAccess.module.css';
+import NasCloudLogo from '../../components/common/NasCloudLogo';
 
 export default function ShareAccess() {
   const { userid, filesharing, time, token } = useParams();
@@ -48,7 +49,7 @@ export default function ShareAccess() {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <div className={styles.brand}>
-          <img src="/nascloud.svg" alt="NasCloud Logo" className={styles.logoIcon} />
+          <NasCloudLogo size={36} className={styles.logoIcon} />
           <h2>NasCloud</h2>
         </div>
         

@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useToast } from '../../context/ToastContext';
 import { forgotPassword, forgotCode, verifyCode } from '../../api/endpoints';
 import styles from './ForgotPassword.module.css';
+import NasCloudLogo from '../../components/common/NasCloudLogo';
 
 export default function ForgotPassword() {
   const { addToast } = useToast();
@@ -80,7 +81,7 @@ export default function ForgotPassword() {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <div className={styles.brand}>
-          <img src="/nascloud.svg" alt="NasCloud Logo" className={styles.logoIcon} />
+          <NasCloudLogo size={36} className={styles.logoIcon} />
           <h2>NasCloud</h2>
         </div>
 

@@ -6,6 +6,7 @@ import { API_BASE_URL, ALLOW_USERS_KEY, AUTH_TOKEN_KEY, MAIN_USERNAME_KEY, MAIN_
 import { saveBackendUrl } from '../../api/backendUrl';
 import { logFez } from '../../utils/testLogger';
 import styles from './DualLogin.module.css';
+import NasCloudLogo from '../../components/common/NasCloudLogo';
 
 export default function DualLogin() {
   const { login } = useAuth();
@@ -229,7 +230,7 @@ export default function DualLogin() {
           <div className={styles.cardContent}>
             <div className={styles.formContent}>
               <div className={styles.brandHeader}>
-                <img src="/nascloud.svg" alt="NasCloud Logo" className={styles.logoImg} />
+                  <NasCloudLogo size={52} className={styles.logoImg} />
                 <h1>Access Drive</h1>
               </div>
 
@@ -299,7 +300,7 @@ export default function DualLogin() {
             {mode === 'register' ? (
               <div className={styles.formContent}>
                 <div className={styles.brandHeader}>
-                  <img src="/nascloud.svg" alt="NasCloud Logo" className={styles.logoImg} />
+                    <NasCloudLogo size={52} className={styles.logoImg} />
                   <h1>Admin Registration</h1>
                 </div>
 
@@ -359,7 +360,7 @@ export default function DualLogin() {
             ) : (
               <div className={styles.formContent}>
                 <div className={styles.brandHeader}>
-                  <img src="/nascloud.svg" alt="NasCloud Logo" className={styles.logoImg} />
+                    <NasCloudLogo size={52} className={styles.logoImg} />
                   <h1>Admin Login</h1>
                 </div>
 

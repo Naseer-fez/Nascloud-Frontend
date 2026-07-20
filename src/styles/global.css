@@ -122,10 +122,10 @@ h1, h2, h3, h4, h5, h6 {
   border-color: transparent;
 }
 
-/* Scrollbars override */
+/* Scrollbars override using CSS variables */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
 }
 
 ::-webkit-scrollbar-track {
@@ -133,23 +133,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--border-visible);
-  background-image: url('/nascloud.svg');
+  background-color: var(--scrollbar-thumb-bg);
+  background-image: var(--scrollbar-logo-url);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 6px;
+  background-size: var(--scrollbar-logo-size);
   border-radius: var(--radius-full);
-  border: 2px solid transparent;
+  border: var(--scrollbar-border-size) solid transparent;
   background-clip: padding-box;
   transition: background-color var(--duration-fast);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--accent);
-  background-image: url('/nascloud.svg');
+  background-color: var(--scrollbar-thumb-hover-bg);
+  background-image: var(--scrollbar-logo-url);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 6px;
-  border: 2px solid transparent;
+  background-size: var(--scrollbar-logo-size);
+  border: var(--scrollbar-border-size) solid transparent;
   background-clip: padding-box;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Cloud, 
   Download, 
   Shield, 
   HardDrive, 
@@ -17,6 +16,7 @@ import {
   Database
 } from 'lucide-react';
 import { DOWNLOAD_ZIP_URL, GITHUB_URL } from '../../config';
+import NasCloudLogo from '../../components/common/NasCloudLogo';
 import styles from './Home.module.css';
 
 // Mockup image imports
@@ -33,16 +33,14 @@ export default function Home() {
     }
   };
 
-
-
   return (
     <div className={styles.homeContainer}>
       {/* Navbar */}
       <nav className={styles.navbar}>
-        <div className={styles.navBrand}>
-          <Cloud className={styles.brandIcon} size={28} />
+        <Link to="/" className={styles.navBrand}>
+          <NasCloudLogo size={28} className={styles.brandIcon} />
           <span className={styles.brandName}>NasCloud</span>
-        </div>
+        </Link>
         <div className={styles.navLinks}>
           <button onClick={() => handleScroll('features')} className={styles.navLinkBtn}>
             Features
@@ -250,7 +248,7 @@ export default function Home() {
               />
             </div>
             <div className={styles.previewMeta}>
-              <Cloud size={18} className={styles.previewIcon} />
+              <NasCloudLogo size={18} className={styles.previewIcon} />
               <h4>Fluid File Storage Web UI</h4>
             </div>
             <p>The sleek, glassmorphic client interface features instant search, visual folder structures, drag uploads, and detailed storage breakdown.</p>
@@ -262,7 +260,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerTop}>
           <div className={styles.footerBrand}>
-            <Cloud className={styles.brandIcon} size={24} />
+            <NasCloudLogo size={24} className={styles.brandIcon} />
             <span className={styles.brandName}>NasCloud</span>
           </div>
           <div className={styles.footerLinks}>

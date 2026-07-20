@@ -22,11 +22,11 @@ body {
 }
 
 /* ==========================================================================
-   Apple-Style Minimal Scrollbars
+   Apple-Style Minimal Scrollbars using CSS variables
    ========================================================================== */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
 }
 
 ::-webkit-scrollbar-track {
@@ -34,24 +34,24 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(81, 105, 100, 0.25); /* Subtle brand color tint */
-  background-image: url('/nascloud.svg');
+  background-color: var(--scrollbar-thumb-bg);
+  background-image: var(--scrollbar-logo-url);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 6px;
+  background-size: var(--scrollbar-logo-size);
   border-radius: var(--radius-full);
-  border: 2px solid transparent;
+  border: var(--scrollbar-border-size) solid transparent;
   background-clip: padding-box;
   transition: background-color var(--duration-fast);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--accent);
-  background-image: url('/nascloud.svg');
+  background-color: var(--scrollbar-thumb-hover-bg);
+  background-image: var(--scrollbar-logo-url);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 6px;
-  border: 2px solid transparent;
+  background-size: var(--scrollbar-logo-size);
+  border: var(--scrollbar-border-size) solid transparent;
   background-clip: padding-box;
 }
 
@@ -70,4 +70,25 @@ body {
 }
 .soft-press:active {
   transform: scale(0.97);
+}
+
+/* Floating Scrollbar Logo Anchor */
+.scrollbar-logo-anchor {
+  position: fixed;
+  right: 1px;
+  bottom: 10px;
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+  z-index: 999999;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+}
+
+.scrollbar-logo-anchor svg {
+  width: var(--scrollbar-logo-size);
+  height: var(--scrollbar-logo-size);
+  display: block;
 }
