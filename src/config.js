@@ -1,8 +1,8 @@
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
 export const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || window.location.origin;
-export const DOWNLOAD_SETUP_URL = import.meta.env.VITE_DOWNLOAD_SETUP_URL || 'https://github.com/Naseer-fez/NasCloud-Backend/releases/latest/download/NasCloudSetup.exe';
-export const DOWNLOAD_SERVER_URL = import.meta.env.VITE_DOWNLOAD_SERVER_URL || 'https://github.com/Naseer-fez/NasCloud-Backend/releases/latest/download/NasCloudServer.exe';
-export const DOWNLOAD_ZIP_URL = import.meta.env.VITE_DOWNLOAD_ZIP_URL || 'https://github.com/Naseer-fez/NasCloud-Backend/releases/latest';
+export const DOWNLOAD_SETUP_URL = import.meta.env.VITE_DOWNLOAD_SETUP_URL || 'https://github.com/Naseer-fez/NasCloud-Backend/releases/download/v1.0.2/NasCloudSetup.exe';
+export const DOWNLOAD_SERVER_URL = import.meta.env.VITE_DOWNLOAD_SERVER_URL || 'https://github.com/Naseer-fez/NasCloud-Backend/releases/download/v1.0.2/NasCloudServer.exe';
+export const DOWNLOAD_ZIP_URL = import.meta.env.VITE_DOWNLOAD_ZIP_URL || 'https://github.com/Naseer-fez/NasCloud-Backend/releases/download/v1.0.2/NasCloud.zip';
 export const GITHUB_URL = import.meta.env.VITE_GITHUB_URL || 'https://github.com/Naseer-fez/NasCloud-Backend';
 
 // localStorage key constants
